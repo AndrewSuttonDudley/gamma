@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  postgres:
+    image: 'postgres:15.3'
+    environment:
+      - 'POSTGRES_USER=gamma'
+      - 'POSTGRES_DB=gamma'
+      - 'POSTGRES_PASSWORD=gamma'
+    ports:
+      - '5432:5432'

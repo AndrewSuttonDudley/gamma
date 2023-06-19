@@ -12,12 +12,16 @@ services:
     networks:
       - gamma-network
 
-#  gamma:
-#    image: 'sleepyheadlabs-gamma:latest'
-#    ports:
-#      - '8080:8080'
-#    networks:
-#      - gamma-network
+  gamma:
+    build: .
+    depends_on:
+      - postgres
+    environment:
+      - 'spring.datasource.url=jdbc:postgresql://postgres/gamma?user=gamma&password=gamma'
+    ports:
+      - '8080:8080'
+    networks:
+      - gamma-network
 
 networks:
   gamma-network:
