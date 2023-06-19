@@ -13,9 +13,7 @@ services:
       - gamma-network
 
   gamma:
-    build: .
-    depends_on:
-      - postgres
+    image: 'sleepyheadlabs-gamma:latest'
     environment:
       - 'spring.datasource.url=jdbc:postgresql://postgres/gamma?user=gamma&password=gamma'
     ports:
